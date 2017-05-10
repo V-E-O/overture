@@ -60,7 +60,9 @@ func (cb *ClientBundle) ExchangeFromRemote(isCache bool, isLog bool) {
 			return
 		}
 	}
-	cb.ResponseMessage = em
+	if cb.ResponseMessage != nil {
+		cb.ResponseMessage = em
+	}
 }
 
 func (cb *ClientBundle) ExchangeFromLocal() bool {
